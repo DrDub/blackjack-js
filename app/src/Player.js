@@ -2,11 +2,16 @@ function Player() {
   this.hand = [];
 }
 
-Player.prototype.getScore = function () {
+Player.prototype.getScore = function() {
   var score = 0;
-  var hand = this.hand;
-  for(i = 0; i < hand.length ; i++){
-    score += (hand[i] > 10 ? 10 : hand[i]);
+
+  for(i = 0; i < this.hand.length ; i++){
+    score += (this.hand[i].worth > 10 ? 10 : this.hand[i].worth);
   }
+
   return score;
+};
+
+Player.prototype.isBust = function () {
+  return true;
 };
