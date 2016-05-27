@@ -3,9 +3,9 @@ $(document).ready(function(){
   $('#hit').prop('disabled', true);
   $('#stick').prop('disabled', true);
   $('#status').hide();
-  
+
   $('#deal').click(function(){
-    game.start();
+    game.deal();
     listPlayerCards(player.hand);
     $('#deal').prop('disabled', true);
     $('#hit').prop('disabled', false);

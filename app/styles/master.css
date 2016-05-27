@@ -1,3 +1,36 @@
 body {
   font-family: Courier New, Courier, monospace;
 }
+
+h1{
+  margin: auto;
+  width: 25%;
+}
+div {
+  margin: auto;
+  width: 22%;
+}
+
+button{
+  margin: 10px auto;
+}
+
+.player{
+  background-color: #ddd;
+  border-radius: 10px;
+  width: 200px;
+  padding: 5px 30px;
+  position: absolute;
+  top: 30%;
+  left: 49%;
+}
+
+.dealer{
+  background-color: #ddd;
+  border-radius: 10px;
+  width: 200px;
+  padding: 5px 30px;
+  position: absolute;
+  top: 30%;
+  right: 52%;
+}
