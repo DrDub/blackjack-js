@@ -1,5 +1,6 @@
 function Card(number, suit){
   this.suit = suit;
+  this.number = number;
   this.worth = getValue(number);
 }
 

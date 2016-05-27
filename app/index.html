@@ -3,13 +3,25 @@
   <head>
     <meta charset="utf-8">
     <title>Dojo BlackJack</title>
+    <link rel="stylesheet" href="styles/master.css">
+    <script src='lib/jquery/jquery.js'></script>
+    <script src='src/interface.js'></script>
     <script src='src/card.js'></script>
     <script src='src/deck.js'></script>
     <script src='src/player.js'></script>
     <script src='src/game.js'></script>
-
   </head>
   <body>
-
+    <h1>BLACKJACKTIMEZ</h1>
+    <button id='deal' type='button'>DEAL DEM CARDS</button>
+    <button id='hit' type='button'>HIT</button>
+    <button id='stick' type='button'>STICK</button>
+    <h3>Player</h3>
+    <span id='status'><span>
+    <p>Score: <span id='player-score'>ZILCH</span></p>
+    <p>Cards: <ul id='player-cards'></ul></p>
+    <h3>Dealer</h3>
+    <p>Score: <span id='dealer-score'>Hidden from you.</span></p>
+    <p>Cards: <ul id='player-cards'></ul></p>
   </body>
 </html>
