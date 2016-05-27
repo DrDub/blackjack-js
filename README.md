@@ -10,5 +10,6 @@ from the command line.
 And play in your browser!
 
 Yet to implement:  
-Timing between cards dealt  
-Betting!
+* Timing between cards dealt  
+* Actual cards (:
+* Betting!
