@@ -11,12 +11,7 @@ Game.prototype.deal = function () {
 
 Game.prototype.hit = function () {
   _dealToPlayer();
-  if (player.getScore() > 20) {
-    if (player.getScore() > 21){
-      player.status = 'BUSTED';
-    } else {
-      player.status = 'Blackjack, baby.';
-    }
+  if (player.getScore() > 21) {
     _dealToDealer();
   }
 };
@@ -34,16 +29,23 @@ function _dealToPlayer(){
 }
 
 function _dealToDealer(){
+  while (dealer.getScore() < 18){
   dealer.hand.push(this.deck.pop());
+  }
   _checkWinner();
 }
 
 function _checkWinner(){
-  if (player.isBust() || player.getScore() < dealer.getScore()){
-    dealer.status = 'Dealer wins. Sucks for you';
-    player.status = 'Pffft. You lost.';
-  } else if (dealer.isBust() || player.getScore() > dealer.getScore()){
-    player.status = 'WINNER, YEAH!';
-    dealer.status = 'Loser right here.';
+  if (player.isBust()) {
+    dealer.status = 'Obviously, this guy wins.';
+    player.status = 'BUSTED';
+  } else {
+    if (dealer.isBust() || player.getScore() > dealer.getScore()){
+      player.status = 'WINNER, YEAH!';
+      dealer.status = 'Loser right here.';
+    } else {
+      dealer.status = 'Dealer wins. Sucks for you';
+      player.status = 'Pffft. You lost.';
+    }
   }
 }
