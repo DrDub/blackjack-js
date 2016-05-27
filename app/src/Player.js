@@ -1,5 +1,6 @@
 function Player() {
   this.hand = [];
+  this.status = '';
 }
 
 Player.prototype.getScore = function() {

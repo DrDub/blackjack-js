@@ -1,11 +1,12 @@
 describe('Game', function(){
-  var game;
+  var game, $;
 
   beforeEach(function(){
     game = new Game();
     player = new Player();
     dealer = new Player();
     game.deal();
+    $ = 'selector';
   });
 
   it('is initialised with a new full deck', function(){
@@ -31,14 +32,14 @@ describe('Game', function(){
         expect(player.hand.length).toEqual(2);
       });
 
-      xit('if player scores blackjack', function(){
+      it('if player scores blackjack', function(){
         spyOn(player, 'getScore').and.returnValue(21);
         spyOn(dealer, 'getScore').and.returnValue(18);
         game.hit();
         expect(dealer.hand.length).toEqual(3);
       });
 
-      xit('if player goes bust', function(){
+      it('if player goes bust', function(){
         spyOn(player, 'getScore').and.returnValue(25);
         spyOn(dealer, 'getScore').and.returnValue(18);
         game.hit();
@@ -46,4 +47,17 @@ describe('Game', function(){
       });
     });
 
+  it('determines dealer as winner', function(){
+    spyOn(player, 'getScore').and.returnValue(25);
+    spyOn(dealer, 'getScore').and.returnValue(18);
+    game.hit();
+    expect(dealer.status).toEqual('Dealer wins. Sucks for you');
+  });
+
+  it('determines player as winner', function(){
+    spyOn(player, 'getScore').and.returnValue(21);
+    spyOn(dealer, 'getScore').and.returnValue(17);
+    game.hit();
+    expect(player.status).toEqual('WINNER, YEAH!');
+  });
 });

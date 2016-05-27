@@ -8,9 +8,9 @@ h1{
 }
 .buttons {
   position: absolute;
-  left: 40%;
+  left: 35%;
   margin: auto;
-  width: 22%;
+  width: 30%;
 }
 
 button{
@@ -20,7 +20,7 @@ button{
 .player{
   background-color: #ddd;
   border-radius: 10px;
-  width: 200px;
+  width: 240px;
   padding: 5px 30px;
   position: absolute;
   top: 15%;
@@ -30,9 +30,13 @@ button{
 .dealer{
   background-color: #ddd;
   border-radius: 10px;
-  width: 200px;
+  width: 240px;
   padding: 5px 30px;
   position: absolute;
   top: 15%;
   right: 54%;
+}
+
+li {
+  list-style-type: none;
 }
