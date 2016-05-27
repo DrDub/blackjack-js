@@ -6,7 +6,9 @@ h1{
   margin: auto;
   width: 25%;
 }
-div {
+.buttons {
+  position: absolute;
+  left: 40%;
   margin: auto;
   width: 22%;
 }
@@ -21,8 +23,8 @@ button{
   width: 200px;
   padding: 5px 30px;
   position: absolute;
-  top: 30%;
-  left: 49%;
+  top: 15%;
+  left: 48%;
 }
 
 .dealer{
@@ -31,6 +33,6 @@ button{
   width: 200px;
   padding: 5px 30px;
   position: absolute;
-  top: 30%;
-  right: 52%;
+  top: 15%;
+  right: 54%;
 }
