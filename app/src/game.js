@@ -12,12 +12,12 @@ Game.prototype.deal = function () {
 Game.prototype.hit = function () {
   _dealToPlayer();
   if (player.getScore() > 21) {
-    _dealToDealer();
+    _checkWinner();
   }
 };
 
 Game.prototype.stick = function () {
-  _dealToDealer();
+  _checkWinner();
 };
 
 var player = new Player();
@@ -32,7 +32,6 @@ function _dealToDealer(){
   while (dealer.getScore() < 18){
   dealer.hand.push(this.deck.pop());
   }
-  _checkWinner();
 }
 
 function _checkWinner(){
@@ -40,6 +39,7 @@ function _checkWinner(){
     dealer.status = 'Obviously, this guy wins.';
     player.status = 'BUSTED';
   } else {
+    _dealToDealer();
     if (dealer.isBust() || player.getScore() > dealer.getScore()){
       player.status = 'WINNER, YEAH!';
       dealer.status = 'Loser right here.';
