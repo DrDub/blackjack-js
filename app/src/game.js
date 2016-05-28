@@ -29,8 +29,8 @@ function _dealToPlayer(){
 }
 
 function _dealToDealer(){
-  while (dealer.getScore() < 18){
-  dealer.hand.push(this.deck.pop());
+  if (dealer.getScore() < 18){
+    dealer.hand.push(this.deck.pop());
   }
 }
 
@@ -48,4 +48,5 @@ function _checkWinner(){
       player.status = 'Pffft. You lost.';
     }
   }
+  _disableButtons();
 }

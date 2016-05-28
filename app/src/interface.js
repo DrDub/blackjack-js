@@ -6,6 +6,7 @@ $(document).ready(function(){
   });
 
   _disableButtons();
+  $('#new-game').prop('disabled', true);
   $('#player-status').hide();
   $('#dealer-status').hide();
 
@@ -16,6 +17,7 @@ $(document).ready(function(){
     hideFirstCard(dealer.hand);
     $('#dealer-score').html('Hidden!');
     _enableButtons();
+
   });
 
   $('#hit').click(function(){
@@ -27,6 +29,7 @@ $(document).ready(function(){
     } else {
       hideFirstCard(dealer.hand);
     }
+
   });
 
   $('#stick').click(function(){
@@ -90,7 +93,6 @@ function _toggleStatus(){
 }
 
 function _disableButtons(){
-    $('#new-game').prop('disabled', true);
     $('#hit').prop('disabled', true);
     $('#stick').prop('disabled', true);
 }
