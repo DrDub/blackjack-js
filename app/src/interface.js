@@ -5,11 +5,7 @@ $(document).ready(function(){
     location.reload();
   });
 
-  _disableButtons();
-  $('#new-game').prop('disabled', true);
-  $('#player-status').hide();
-  $('#dealer-status').hide();
-
+  newGame();
 
   $('#deal').click(function(){
     game.deal();
@@ -86,10 +82,15 @@ function cardName(value){
 }
 
 function _toggleStatus(){
-  $('#player-status').html(player.status);
-  $('#dealer-status').html(dealer.status);
-  $('#player-status').show();
-  $('#dealer-status').show();
+  $('#player-status').html(player.status).show();
+  $('#dealer-status').html(dealer.status).show();
+}
+
+function newGame(){
+ _disableButtons();
+ $('#new-game').prop('disabled', true);
+ $('#player-status').hide();
+ $('#dealer-status').hide();
 }
 
 function _disableButtons(){
